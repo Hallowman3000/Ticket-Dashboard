@@ -1,0 +1,18 @@
+/* Additional App-specific styles */
+/* Most styles are handled by Tailwind CSS in index.css */
+
+/* Ensure smooth scrolling behavior */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Focus visible styles for accessibility */
+*:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Remove focus outline for mouse users */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
