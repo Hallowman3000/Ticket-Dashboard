@@ -1,0 +1,33 @@
+# MT5 Trading Bot - Git Ignore
+
+# Environment variables (contains secrets!)
+.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# Log files
+*.log
+logs/
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Type checking
+.mypy_cache/
