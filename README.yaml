@@ -1,0 +1,24 @@
+OS Ticket PDF Parser - Documentation
+
+OVERVIEW:
+This tool processes ZIP archives containing osTicket exported PDFs. It performs 
+in-memory parsing to convert unstructured PDF text into structured JSONL data 
+suitable for Postgres/Database ingestion.
+
+CAPABILITIES:
+1. Regex Metadata: Extracts Ticket #, Status, Dept, and Customer info from page 1.
+2. Thread Splitting: Uses "Anchor Patterns" (Date + Name) to identify where one 
+   message ends and another begins.
+3. Logical Threading: Identifies if a block is a Message, Internal Note, or 
+   Status Event (Resolved/Closed).
+4. Time Analytics: Calculates 'raised_at', 'resolved_at', and detects re-opened 
+   activity (messages appearing after a resolution event).
+
+CONFIGURATION:
+- If date formats change in the PDF, update THREAD_ANCHOR_PATTERN.
+- If osTicket labels change (e.g., "Assigned To" instead of "Dept"), 
+  update METADATA_PATTERNS.
+
+OUTPUTS:
+- tickets.jsonl: The main data file.
+- errors.csv: Log of any corrupted PDFs or Zips that failed to parse.

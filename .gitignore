@@ -1,0 +1,22 @@
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
+
+# Data
+*.csv
+*.json
+*.zip
+*.docx
+*.pdf
+
+# Output directories
+out/
+email details/
+email details - Copy/
+pdf_output/
+
+# VS Code
+.vscode/
